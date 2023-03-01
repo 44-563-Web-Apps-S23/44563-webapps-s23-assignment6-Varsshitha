@@ -20,8 +20,8 @@
 
 
 <script> 
-var good=0
-var oops=0
+var goodin=0
+var oopsin=0
 
 function checkPainter(){
     console.log("Getting form values")
@@ -32,13 +32,37 @@ function checkPainter(){
     out = document.getElementById("result")
     if(password==check){
         alert("You got it right")
-        good=good+1
+        goodin=goodin+1
     } else {
-        oops=oops+1
+        oopsin=oopsin+1
         alert('Sorry')
     }
-    out.innerHTML ="Right count: " +good+" Wrong count: "+oops
+    out.innerHTML ="Right count: " +goodin+" Wrong count: "+oopsin
 }
+</script>
+<div class="container">
+    <img id="Plant-Image" width="100" height="100" alt="Picture of a plant" src="IDESIA.jpg" onclick="selectImage()">
+</div>
+
+<script>
+    var useImages=1;
+    function selectImage() {
+
+        switch (useImages) {
+            case 1:
+                useImages = 2; document.getElementById("Plant-Image").src = "IDESIA.jpg"; 
+                break;
+            case 2:
+                useImages = 3; document.getElementById("Plant-Image").src = "lamium.jpg"; 
+                break;
+            case 3:
+                useImages = 1; document.getElementById("Plant-Image").src = "olea.jpg"; 
+                break;
+
+
+        }
+
+    }
 </script>
 
 </body>
